@@ -61,4 +61,4 @@ def diy_docker_images():
 
 if __name__ == '__main__':
     #make_new_deploy()
-    diy_docker_images
+    diy_docker_images()
