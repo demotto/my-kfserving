@@ -1,0 +1,7 @@
+gcr.io/kfserving/alibi-explainer:0.2.1
+gcr.io/kfserving/sklearnserver:0.2.1
+gcr.io/kfserving/xgbserver:0.2.1
+gcr.io/kfserving/pytorchserver:0.2.1
+gcr.io/kfserving/storage-initializer:0.2.1
+gcr.io/kubebuilder/kube-rbac-proxy:v0.4.0
+gcr.io/kfserving/kfserving-controller:0.2.1

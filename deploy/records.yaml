@@ -1,0 +1,14 @@
+- from: gcr.io/kfserving/alibi-explainer:0.2.1
+  to: demotto/mykubeflow.gcr.io.kfserving.alibi-explainer:0.2.1
+- from: gcr.io/kfserving/sklearnserver:0.2.1
+  to: demotto/mykubeflow.gcr.io.kfserving.sklearnserver:0.2.1
+- from: gcr.io/kfserving/xgbserver:0.2.1
+  to: demotto/mykubeflow.gcr.io.kfserving.xgbserver:0.2.1
+- from: gcr.io/kfserving/pytorchserver:0.2.1
+  to: demotto/mykubeflow.gcr.io.kfserving.pytorchserver:0.2.1
+- from: gcr.io/kfserving/storage-initializer:0.2.1
+  to: demotto/mykubeflow.gcr.io.kfserving.storage-initializer:0.2.1
+- from: gcr.io/kubebuilder/kube-rbac-proxy:v0.4.0
+  to: demotto/mykubeflow.gcr.io.kubebuilder.kube-rbac-proxy:v0.4.0
+- from: gcr.io/kfserving/kfserving-controller:0.2.1
+  to: demotto/mykubeflow.gcr.io.kfserving.kfserving-controller:0.2.1
