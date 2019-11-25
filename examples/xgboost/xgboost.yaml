@@ -1,0 +1,9 @@
+apiVersion: "serving.kubeflow.org/v1alpha2"
+kind: "InferenceService"
+metadata:
+  name: "xgboost-iris"
+spec:
+  default:
+    predictor:
+      xgboost:
+        storageUri: "http://store04:31888/xgboost/iris"
