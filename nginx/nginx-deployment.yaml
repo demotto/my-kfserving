@@ -15,6 +15,15 @@ spec:
       containers:
         - name: nginx
           image:  nginx:alpine
+          volumeMounts:
+            - mountPath: /usr/share/nginx/html
+              name: nginx-data
+          volumes:
+            - name: nginx-data
+              nfs:
+                path: /data1/k8s_nfs/models
+                server: store03
+
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
