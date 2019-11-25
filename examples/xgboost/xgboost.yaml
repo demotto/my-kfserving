@@ -6,5 +6,5 @@ spec:
   default:
     predictor:
       xgboost:
-        #storageUri: "http://store04:31888/xgboost/iris"
-        storageUri: "/data1/k8s_nfs/models/xgboost/iris"
+        storageUri: "gs://xgboost/iris"
+#        storageUri: "pvc://xgboost/iris"
