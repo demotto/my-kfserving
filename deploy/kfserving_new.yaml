@@ -884,7 +884,7 @@ data:
     }
   storageInitializer: |-
     {
-        "image" : "demotto/mykubeflow.gcr.io.kfserving.storage-initializer:0.2.1",
+        "image" : "demotto/storage-initializer:0.2.1",
         "memoryRequest": "100Mi",
         "memoryLimit": "1Gi",
         "cpuRequest": "100m",
