@@ -22,6 +22,7 @@ from azure.storage.blob import BlockBlobService
 from google.auth import exceptions
 from google.cloud import storage
 from minio import Minio
+import zipfile
 
 _GCS_PREFIX = "gs://"
 _S3_PREFIX = "s3://"
@@ -51,7 +52,7 @@ class Storage(object): # pylint: disable=too-few-public-methods
             Storage._download_s3(uri, out_dir)
         elif re.search(_BLOB_RE, uri):
             Storage._download_blob(uri, out_dir)
-        elif uri.startswith(_HTTP_PREFIX):
+        elif uri.startswith(_HTTP_PREFIX) or uri.startswith(_GITHUB_PREFIX):
             Storage._download_http(uri, out_dir)
         elif is_local:
             return Storage._download_local(uri, out_dir)
@@ -228,6 +229,10 @@ The path or model %s does not exist." % (uri))
                 if chunk:
                     f.write(chunk)
 
+        if dest.endswith(".zip"):
+            zf = zipfile.ZipFile(dest)
+            zf.extractall(path=out_dir)
+
         return out_dir
 
     @staticmethod
@@ -242,4 +247,7 @@ The path or model %s does not exist." % (uri))
 
 
 if __name__ == '__main__':
-    Storage.download("https://www.baidu.com/index.html", "output_dir")
+    out_dir = Storage.download("http://10.107.19.51/mm.zip", "/home/admin/hyf")
+    #out_dir = Storage.download("gs://seldon-models/tfserving/mnist-model", "d:/")
+
+    print(out_dir)
